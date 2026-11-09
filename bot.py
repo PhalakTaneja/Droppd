@@ -73,7 +73,7 @@ def require_env(name):
     if not value:
         print(f"ERROR: {name} is not set.")
         print(f"  - Running locally?  Put {name}=... in your .env file")
-        print("   (copy .env.example to .env and fill it in).")
+        print("   (create a .env file in this folder and fill it in).")
         print("  - Running on GitHub Actions?  Add it under Settings > Secrets")
         print("    and variables > Actions > New repository secret.")
         sys.exit(1)

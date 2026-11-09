@@ -40,13 +40,15 @@ What you need: Python 3, a Telegram account, a free Google account.
    - Gemini API key: create one free at
      <https://aistudio.google.com/apikey>.
 
-3. Create your local config from the template:
+3. Create your local config. In this folder, make a file named `.env`
+   (it is gitignored, so your secrets never leave your machine) and give
+   it these lines:
 
-       cp .env.example .env
+       TELEGRAM_BOT_TOKEN=paste-your-token-here
+       GEMINI_API_KEY=paste-your-key-here
+       TELEGRAM_CHAT_ID=
 
-   Open `.env` and paste in your bot token and Gemini key. Leave
-   `TELEGRAM_CHAT_ID` empty for now. `.env` is gitignored, so your secrets
-   never leave your machine.
+   Leave `TELEGRAM_CHAT_ID` empty for now; step 4 fills it in.
 
 4. Find your chat id: open Telegram, send `/start` to your new bot, then:
 
