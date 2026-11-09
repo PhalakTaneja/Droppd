@@ -1,0 +1,9 @@
+# Secrets -- never commit these
+.env
+
+# Python clutter
+__pycache__/
+*.pyc
+
+# Editor settings
+.vscode/

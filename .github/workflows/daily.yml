@@ -1,0 +1,44 @@
+# GitHub Actions runs this file for you, on GitHub's own computers.
+#
+# - "schedule" fires every day at 04:30 UTC, which is 10:00 in India.
+# - "workflow_dispatch" adds a "Run workflow" button in the Actions tab,
+#   so you can trigger a recommendation right now to test it.
+
+name: Daily app recommendation
+
+on:
+  schedule:
+    - cron: "30 4 * * *"   # 10:00 India time (GitHub uses UTC)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write   # lets the bot save history.txt back to the repo
+
+jobs:
+  recommend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Pick one app and send it to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python bot.py
+
+      # Save history.txt back so the bot never repeats a recommendation.
+      # continue-on-error keeps the run green even if this save hiccups --
+      # the important part (your Telegram message) has already been sent.
+      - name: Save recommendation history
+        continue-on-error: true
+        run: |
+          git config user.name "daily-app-bot"
+          git config user.email "actions@github.com"
+          git add history.txt
+          git diff --staged --quiet || git commit -m "history: add pick for $(date -u +%F)"
+          git push
