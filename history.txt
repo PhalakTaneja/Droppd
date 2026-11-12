@@ -2,3 +2,4 @@
 2026-11-09  ShareX
 2026-11-10  nikitabobko/AeroSpace
 2026-11-11  sxyazi/yazi
+2026-11-12  usebruno/bruno
