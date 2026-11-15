@@ -5,3 +5,4 @@
 2026-11-12  usebruno/bruno
 2026-11-13  kopia/kopia
 2026-11-14  Super Productivity
+2026-11-15  obsidian-tasks-group/obsidian-tasks
