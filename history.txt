@@ -7,3 +7,4 @@
 2026-11-14  Super Productivity
 2026-11-15  obsidian-tasks-group/obsidian-tasks
 2026-11-16  ActivityWatch
+2026-11-17  usememos/memos
