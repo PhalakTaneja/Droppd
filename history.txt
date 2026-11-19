@@ -9,3 +9,4 @@
 2026-11-16  ActivityWatch
 2026-11-17  usememos/memos
 2026-11-18  hluk/CopyQ
+2026-11-19  Cap
