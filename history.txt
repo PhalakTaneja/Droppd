@@ -13,3 +13,4 @@
 2026-11-20  lwouis/alt-tab-macos
 2026-11-21  sharkdp/bat
 2026-11-22  usebruno/bruno
+2026-11-26  CorentinTh/it-tools
