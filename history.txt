@@ -15,3 +15,4 @@
 2026-11-22  usebruno/bruno
 2026-11-26  CorentinTh/it-tools
 2026-11-27  fzf
+2026-11-28  CrossPaste/crosspaste-desktop
